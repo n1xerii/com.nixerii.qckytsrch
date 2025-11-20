@@ -1,0 +1,18 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "hillmanniklas@gmail.com",
+                "Name": "Nixerii"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Youtube search widget.",
+        "Icon": "about_kde",
+        "Id": "com.nixerii.qckytsrch",
+        "Name": "Quick Youtube Search",
+        "Version": "1",
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "KPackageStructure": "Plasma/Applet"
+}
