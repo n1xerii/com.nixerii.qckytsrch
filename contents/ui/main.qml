@@ -13,6 +13,13 @@ PlasmoidItem {
     Layout.minimumWidth: showButton.implicitWidth
     Layout.minimumHeight: showButton.implicitHeight
 
+    Plasmoid.compactRepresentation: PlasmaComponents.Button {
+        text: "Search"
+        onClicked: {
+            root.expanded = !root.expanded
+        }
+    }
+
     function togglePopup() {
         if (popup.visible == true) {
             popup.close()
