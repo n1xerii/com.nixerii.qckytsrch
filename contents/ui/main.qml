@@ -1,24 +1,12 @@
 import QtQuick
 import QtQuick.Layouts
-import QtQuick.Controls
 import org.kde.plasma.core as PlasmaCore
 import org.kde.plasma.components as PlasmaComponents
 import org.kde.plasma.plasmoid
 
+
 PlasmoidItem {
     id: root
-
-    Layout.preferredWidth: showButton.implicitWidth
-    Layout.preferredHeight: showButton.implicitHeight
-    Layout.minimumWidth: showButton.implicitWidth
-    Layout.minimumHeight: showButton.implicitHeight
-
-    Plasmoid.compactRepresentation: PlasmaComponents.Button {
-        text: "Search"
-        onClicked: {
-            root.expanded = !root.expanded
-        }
-    }
 
     function togglePopup() {
         if (popup.visible == true) {
@@ -31,46 +19,32 @@ PlasmoidItem {
 
     PlasmaComponents.Button {
         id: showButton
-        text: "Search"
-        width: 70
-        height: 35
+        text: "SEARCH"
+        font.bold: true
+        width: parent.width
+        height: parent.height
+        font.pixelSize: 20
 
         onClicked: togglePopup()
     }
 
     PlasmaComponents.Popup {
         id: popup
-        modal: false
-        focus: true
+        width: showButton.width
+        height: showButton.height
 
-        x: showButton.x - showButton.width + 12.5
-        y: showButton.y - height
+        PlasmaComponents.TextField {
+            id: searchField
+            width: showButton.width / 2
+            height: showButton.height / 3
 
-        width: 185
+            placeholderText: qsTr("Search Youtube...")
 
-        Layout.alignment: Qt.AlignHCenter
-
-        ColumnLayout {
-            PlasmaComponents.Label {
-                id: searchLabel
-                text: "YOUTUBE SEARCH"
-                font.bold: true
-
-                Layout.alignment: Qt.AlignHCenter
-            }
-
-            PlasmaComponents.TextField {
-                id: searchField
-                placeholderText: qsTr("Search Youtube...")
-
-                Layout.alignment: Qt.AlignHCenter
-
-                onAccepted: {
-                    Qt.openUrlExternally(
-                        "https://www.youtube.com/results?search_query=" + encodeURIComponent(text)
-                    )
-                    popup.close()
-                }
+            onAccepted: {
+                Qt.openUrlExternally(
+                    "https://www.youtube.com/results?search_query=" + encodeURIComponent(text)
+                )
+                popup.close()
             }
         }
     }
