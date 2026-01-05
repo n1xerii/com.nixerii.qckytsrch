@@ -10,8 +10,10 @@
         "Description": "A simple YouTube search KDE Plasma widget.",
         "Icon": "about_kde",
         "Id": "com.nixerii.qckytsrch",
+        "License": "GPL-3.0",
         "Name": "Quick Youtube Search",
-        "Version": "1",
+        "Version": "1.0.0",
+        "Website": "https://github.com/n1xerii/com.nixerii.qckytsrch"
     },
     "X-Plasma-API-Minimum-Version": "6.0",
     "KPackageStructure": "Plasma/Applet"
