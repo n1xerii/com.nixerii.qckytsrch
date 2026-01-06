@@ -1,2 +1,2 @@
-# com.nixerii.qckytsrch
- A very simple KDE Plasma widget allowing you to search youtube.
+# QCKYTSRCH
+A simple KDE Plasma widget that allows you to search Youtube from your desktop.
