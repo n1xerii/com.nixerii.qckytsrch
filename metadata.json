@@ -6,7 +6,7 @@
                 "Name": "Nixerii"
             }
         ],
-        "Category": "System Information",
+        "Category": "Utilities",
         "Description": "A simple YouTube search KDE Plasma widget.",
         "Icon": "about_kde",
         "Id": "com.nixerii.qckytsrch",
