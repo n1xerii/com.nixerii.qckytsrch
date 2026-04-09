@@ -23,7 +23,7 @@ PlasmoidItem {
 
     PlasmaComponents.Button {
         id: showButton
-        text: "SEARCH"
+        text: "🔍"
         font.bold: true
         width: parent.width
         height: parent.height
