@@ -13,11 +13,16 @@ PlasmoidItem {
     hideOnWindowDeactivate: true
 
     function togglePopup() {
-        if (searchPopup.visible === true) {
-            searchPopup.close()
-        }
-        else {
-            searchPopup.open()
+        switch(searchPopup.visible) {
+            case true:
+                searchPopup.close()
+                break
+            case false:
+                searchPopup.open()
+                break
+            default:
+                searchPopup.close()
+                break
         }
     }
 
