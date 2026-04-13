@@ -13,6 +13,11 @@ Kirigami.FormLayout {
     property alias cfg_useCustomService: useCustomService.checked
     property alias cfg_customServiceLink: customServiceLink.text
 
+    Kirigami.Separator {
+        Kirigami.FormData.isSection: true
+        Kirigami.FormData.label: i18n("General")
+    }
+
     QQC2.CheckBox {
         id: useDuckDuckGo
         Kirigami.FormData.label: i18n("Service:")
