@@ -24,6 +24,10 @@ Item {
             Layout.fillHeight: true
 
             text: plasmoid.configuration.buttonSymbol
+
+            onClicked: {
+
+            }
         }
 
         PlasmaComponents.TextField {
@@ -60,7 +64,7 @@ Item {
         }
     }
 
-    function aio_search(serviceName, query){
+    function aio_search(serviceName, query) {
         var serviceLink = ""
         var serviceQuery = query
 
