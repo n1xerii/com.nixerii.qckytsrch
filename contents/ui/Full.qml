@@ -66,33 +66,45 @@ Item {
 
     function aio_search(serviceName, query) {
         var serviceLink = ""
+        var serviceHomepageLink = ""
         var serviceQuery = query
 
         switch(serviceName) {
             case "DuckDuckGo":
                 serviceLink = "https://duckduckgo.com/?q="
+                serviceHomepageLink = "https://duckduckgo.com"
                 break
             case "Google":
                 serviceLink = "https://www.google.com/search?q="
+                serviceHomepageLink = "https://www.google.com"
                 break
             case "Youtube":
                 serviceLink = "https://www.youtube.com/results?search_query="
+                serviceHomepageLink = "https://www.youtube.com"
                 break
             case "Wikipedia":
                 serviceLink = "https://en.wikipedia.org/wiki/"
+                serviceHomepageLink = "https://en.wikipedia.org"
                 break
             case "Custom":
                 serviceLink = plasmoid.configuration.customServiceLink
+                serviceHomepageLink = plasmoid.configuration.customServiceLink
                 break
             default:
                 serviceLink = "https://duckduckgo.com/?q="
+                serviceHomepageLink = "https://duckduckgo.com"
                 break
         }
 
-        if (serviceLink == null || serviceLink == "") { return }
-
-        Qt.openUrlExternally(
-            serviceLink + encodeURIComponent(serviceQuery)
-        )
+        if (!serviceQuery) {
+            Qt.openUrlExternally(
+                serviceHomepageLink
+            )
+        }
+        else {
+            Qt.openUrlExternally(
+                serviceLink + encodeURIComponent(serviceQuery)
+            )
+        }
     }
 }
